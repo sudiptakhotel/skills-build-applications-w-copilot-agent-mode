@@ -1,7 +1,10 @@
 import { Route, Routes, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
-import Teams from './pages/Teams'
-import Activity from './pages/Activity'
+import Users from './components/Users'
+import Teams from './components/Teams'
+import Activities from './components/Activities'
+import Workouts from './components/Workouts'
+import Leaderboard from './components/Leaderboard'
 
 function App() {
   return (
@@ -17,13 +20,28 @@ function App() {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink to="/users" className="nav-link">
+                  Users
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/activities" className="nav-link">
+                  Activities
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink to="/teams" className="nav-link">
                   Teams
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/activity" className="nav-link">
-                  Activity
+                <NavLink to="/workouts" className="nav-link">
+                  Workouts
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/leaderboard" className="nav-link">
+                  Leaderboard
                 </NavLink>
               </li>
             </ul>
@@ -33,8 +51,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/activities" element={<Activities />} />
         <Route path="/teams" element={<Teams />} />
-        <Route path="/activity" element={<Activity />} />
+        <Route path="/workouts" element={<Workouts />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </div>
   )
