@@ -40,7 +40,7 @@ export default function Activities() {
             </thead>
             <tbody>
               {activities.map((activity) => (
-                <tr key={activity._id ?? activity.id || JSON.stringify(activity)}>
+                <tr key={(activity._id ?? activity.id) || JSON.stringify(activity)}>
                   <td>{activity.name}</td>
                   <td>{activity.user}</td>
                   <td>{activity.team}</td>
